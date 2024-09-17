@@ -35,29 +35,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
-      # - name: Check space usage
-      #   if: (!cancelled())
-      #   run: df -hT
+      - name: Check space usage
+        if: (!cancelled())
+        run: df -hT
 
-      # - name: Free disk space (Ubuntu)
-      #   uses: jlumbroso/free-disk-space@main
-      #   with:
-      #     # this might remove tools that are actually needed,
-      #     # if set to "true" but frees about 6 GB
-      #     tool-cache: false
+      - name: Free disk space (Ubuntu)
+        uses: jlumbroso/free-disk-space@main
+        with:
+          # this might remove tools that are actually needed,
+          # if set to "true" but frees about 6 GB
+          tool-cache: false
           
-      #     # all of these default to true, but feel free to set to
-      #     # "false" if necessary for your workflow
-      #     android: true
-      #     dotnet: true
-      #     haskell: true
-      #     large-packages: true
-      #     docker-images: true
-      #     swap-storage: true
+          # all of these default to true, but feel free to set to
+          # "false" if necessary for your workflow
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: true
 
-      # - name: Check space usage
-      #   if: (!cancelled())
-      #   run: df -hT
+      - name: Check space usage
+        if: (!cancelled())
+        run: df -hT
 
       - name: Initialization environment
         env:
@@ -118,9 +118,9 @@ jobs:
           echo "status=success" >> $GITHUB_OUTPUT
           echo "COMPILE_DATE=$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
 
-      # - name: Check space usage
-      #   if: (!cancelled())
-      #   run: df -hT
+      - name: Check space usage
+        if: (!cancelled())
+        run: df -hT
 
       - name: Organize compiled firmware
         if: steps.compile.outputs.status == 'success' && !cancelled()
