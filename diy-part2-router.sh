@@ -87,11 +87,11 @@ config_package_add luci
 config_package_add default-settings-chn
 # bbr
 config_package_add kmod-tcp-bbr
-# coremark cpu 跑分
-config_package_add coremark
-# autocore + lm-sensors-detect： cpu 频率、温度
-config_package_add autocore
-config_package_add lm-sensors-detect
+# # coremark cpu 跑分
+# config_package_add coremark
+# # autocore + lm-sensors-detect： cpu 频率、温度
+# config_package_add autocore
+# config_package_add lm-sensors-detect
 # nano 替代 vim
 config_package_add nano
 # upnp
@@ -147,6 +147,9 @@ config_package_add bash
 config_package_add tcpdump
 #netcat
 config_package_add netcat
+#tailsacle
+config_package_add tailscale
+
 
 # 第三方软件包
 mkdir -p package/custom
