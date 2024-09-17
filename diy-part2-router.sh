@@ -92,7 +92,7 @@ config_package_add coremark
 # autocore + lm-sensors-detect： cpu 频率、温度
 config_package_add autocore
 config_package_add lm-sensors-detect
-nano 替代 vim
+#nano 替代 vim
 config_package_add nano
 # upnp
 config_package_add luci-app-upnp
