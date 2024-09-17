@@ -96,6 +96,8 @@ config_package_add lm-sensors-detect
 config_package_add nano
 # upnp
 config_package_add luci-app-upnp
+# autoreboot
+config_package_add luci-app-autoreboot
 # tty 终端
 config_package_add luci-app-ttyd
 # docker
@@ -118,6 +120,33 @@ config_package_add kmod-macvlan
 #mwan3
 config_package_add mwan3
 config_package_add luci-app-mwan3
+#qemu-ga
+config_package_add qemu-ga
+#umdns
+config_package_add umdns
+#frpc
+config_package_add luci-app-frpc
+#samba
+config_package_add luci-app-samba
+#zerotier
+config_package_add luci-app-zerotier
+#AX210 驱动
+config_package_add iwlwifi-firmware-ax210
+#mosdns
+config_package_add luci-app-mosdns
+#socat
+config_package_add socat
+#curl
+config_package_add curl
+#byobu, tmux
+config_package_add byobu
+config_package_add tmux
+#bash
+config_package_add bash
+#tcpdump
+config_package_add tcpdump
+#netcat
+config_package_add netcat
 
 # 第三方软件包
 mkdir -p package/custom
