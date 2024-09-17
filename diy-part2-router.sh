@@ -113,6 +113,11 @@ config_package_add kmod-usb-serial
 config_package_add kmod-usb-serial-option
 config_package_add kmod-usb-net-rndis
 config_package_add kmod-usb-net-ipheth
+#macvlan
+config_package_add kmod-macvlan
+#mwan3
+config_package_add mwan3
+config_package_add luci-app-mwan3
 
 # 第三方软件包
 mkdir -p package/custom
