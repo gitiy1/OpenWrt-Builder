@@ -134,34 +134,39 @@ jobs:
           rm -rf immortalwrt-x86-64-generic.manifest
           rm -rf immortalwrt-x86-64-generic-squashfs-rootfs.img.gz
           mv immortalwrt-x86-64-generic-rootfs.tar.gz immortalwrt-${{ env.VERSION }}-x86-64-generic-rootfs-${{ env.COMPILE_DATE }}.tar.gz
-          mv immortalwrt-x86-64-generic-squashfs-combined-efi.img.gz immortalwrt-${{ env.VERSION }}-x86-64-generic-squashfs-combined-efi-${{ env.COMPILE_DATE }}.img.gz
+          # mv immortalwrt-x86-64-generic-squashfs-combined-efi.img.gz immortalwrt-${{ env.VERSION }}-x86-64-generic-squashfs-combined-efi-${{ env.COMPILE_DATE }}.img.gz
 
-      - name: Upload firmware to release
+      # - name: Upload firmware to release
+      #   if: steps.compile.outputs.status == 'success' && !cancelled()
+      #   uses: svenstaro/upload-release-action@v2
+      #   with:
+      #     repo_token: ${{ secrets.GITHUB_TOKEN }}
+      #     file_glob: true
+      #     file: openwrt/bin/targets/x86/64/*
+      #     asset_name: ${{ github.event.repository.name }}-${{ github.sha }}
+      #     tag: router-immortalwrt-${{ env.VERSION }}-x86_64-${{ env.COMPILE_DATE }}
+      #     body: |
+      #       ### 主路由
+      #       - Default IP: 192.168.3.1
+      #       - Default username: root
+      #       - Default password: password
+      #     overwrite: true
+
+      # - name: Delete workflow runs
+      #   uses: Mattraks/delete-workflow-runs@main
+      #   with:
+      #     retain_days: 0
+      #     keep_minimum_runs: 2
+
+      # - name: Remove old releases
+      #   uses: dev-drprasad/delete-older-releases@master
+      #   with:
+      #     keep_latest: 4
+      #     delete_tags: true
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload firmware to artifacts
         if: steps.compile.outputs.status == 'success' && !cancelled()
-        uses: svenstaro/upload-release-action@v2
+        uses: actions/upload-artifact@v4
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file_glob: true
-          file: openwrt/bin/targets/x86/64/*
-          asset_name: ${{ github.event.repository.name }}-${{ github.sha }}
-          tag: router-immortalwrt-${{ env.VERSION }}-x86_64-${{ env.COMPILE_DATE }}
-          body: |
-            ### 主路由
-            - Default IP: 192.168.3.1
-            - Default username: root
-            - Default password: password
-          overwrite: true
-
-      - name: Delete workflow runs
-        uses: Mattraks/delete-workflow-runs@main
-        with:
-          retain_days: 0
-          keep_minimum_runs: 2
-
-      - name: Remove old releases
-        uses: dev-drprasad/delete-older-releases@master
-        with:
-          keep_latest: 4
-          delete_tags: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: openwrt/bin/targets/x86/64/*
