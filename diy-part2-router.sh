@@ -115,6 +115,13 @@ config_package_add kmod-usb-serial
 config_package_add kmod-usb-serial-option
 config_package_add kmod-usb-net-rndis
 config_package_add kmod-usb-net-ipheth
+config_package_add kmod-nls-base
+config_package_add kmod-usb-core
+config_package_add kmod-usb-net
+config_package_add kmod-usb-net-cdc-ether
+config_package_add libimobiledevice
+config_package_add kmod-usb-storage
+
 #macvlan
 config_package_add kmod-macvlan
 #mwan3
