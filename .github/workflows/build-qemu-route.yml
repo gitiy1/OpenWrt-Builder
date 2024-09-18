@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt Router Builder
+name: OpenWrt Qemu Router Builder
 
 on:
   workflow_dispatch:
