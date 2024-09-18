@@ -198,10 +198,12 @@ sed -i "/CONFIG_TARGET_ROOTFS_PARTSIZE/d" .config
 echo "CONFIG_TARGET_ROOTFS_PARTSIZE=2048" >> .config
 # 调整 GRUB_TIMEOUT
 sed -i "s/CONFIG_GRUB_TIMEOUT=\"3\"/CONFIG_GRUB_TIMEOUT=\"1\"/" .config
-## 不生成 EXT4 硬盘格式镜像
-# config_del TARGET_ROOTFS_EXT4FS
+# 不生成 EXT4 硬盘格式镜像
+config_del TARGET_ROOTFS_EXT4FS
 ## 不生成非 EFI 镜像
 config_del GRUB_IMAGES
+# 生成 QCOW2 镜像
+config_add QCOW2_IMAGES
 
 config_add CONFIG_ACPI
 config_add CONFIG_EFI
