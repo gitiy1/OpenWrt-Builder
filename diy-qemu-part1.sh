@@ -19,4 +19,4 @@ sed -i 's,noinitrd,noinitrd mitigations=off,g' target/linux/x86/image/grub-iso.c
 sed -i 's,noinitrd,noinitrd mitigations=off,g' target/linux/x86/image/grub-pc.cfg
 
 # 使用 Linux 6.6 内核
-sed -i 's/KERNEL_PATCHVER:=6.1/KERNEL_PATCHVER:=68./g' target/linux/x86/Makefile
+# sed -i 's/KERNEL_PATCHVER:=6.1/KERNEL_PATCHVER:=68./g' target/linux/x86/Makefile
