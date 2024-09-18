@@ -92,8 +92,8 @@ config_package_add coremark
 # autocore + lm-sensors-detect： cpu 频率、温度
 config_package_add autocore
 config_package_add lm-sensors-detect
-#nano 替代 vim
-config_package_add nano
+#vim-full 替代 vim
+config_package_add vim-full
 # upnp
 config_package_add luci-app-upnp
 # autoreboot
@@ -102,8 +102,6 @@ config_package_add luci-app-autoreboot
 config_package_add luci-app-ttyd
 # docker
 config_package_add luci-app-dockerman
-# kms
-config_package_add luci-app-vlmcsd
 # usb 2.0 3.0 支持
 config_package_add kmod-usb2
 config_package_add kmod-usb3
@@ -122,12 +120,12 @@ config_package_add kmod-usb-net-cdc-ether
 config_package_add libimobiledevice
 config_package_add kmod-usb-storage
 
-#macvlan
+#多拨
 config_package_add kmod-macvlan
-#mwan3
 config_package_add mwan3
 config_package_add luci-app-mwan3
-#qemu-ga
+config_package_add luci-app-syncdial
+#qemu guest agent
 config_package_add qemu-ga
 #umdns
 config_package_add umdns
@@ -156,7 +154,6 @@ config_package_add tcpdump
 config_package_add netcat
 #tailsacle
 config_package_add tailscale
-
 
 # 第三方软件包
 mkdir -p package/custom
