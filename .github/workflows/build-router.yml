@@ -169,5 +169,5 @@ jobs:
         if: steps.compile.outputs.status == 'success' && !cancelled()
         uses: actions/upload-artifact@v4
         with:
-          name: immortalwrt-${{ env.VERSION }}-x86-64-generic-rootfs-${{ env.COMPILE_DATE }}.tar.gz
+          name: immortalwrt-${{ env.VERSION }}-x86-64-generic-rootfs-${{ env.COMPILE_DATE }}
           path: openwrt/bin/targets/x86/64/immortalwrt-${{ env.VERSION }}-x86-64-generic-rootfs-${{ env.COMPILE_DATE }}.tar.gz
