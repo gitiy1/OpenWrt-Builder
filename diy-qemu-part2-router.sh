@@ -205,7 +205,7 @@ config_del GRUB_IMAGES
 # 生成 QCOW2 镜像
 config_add QCOW2_IMAGES
 
-config_add CONFIG_ACPI
-config_add CONFIG_EFI
-config_add CONFIG_EFI_VARS
-config_add CONFIG_EFI_STUB
+# config_add CONFIG_ACPI
+# config_add CONFIG_EFI
+# config_add CONFIG_EFI_VARS
+# config_add CONFIG_EFI_STUB
